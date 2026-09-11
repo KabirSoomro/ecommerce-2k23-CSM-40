@@ -55,8 +55,30 @@
 
 ### 🔄 Core User Flow
 
-```text
-Register/Login → Browse & Search → Add to Cart → Review Cart → Checkout → Payment → Order Confirmed
+```mermaid
+flowchart LR
+    A(["🔐 Register / Login"]) --> B(["🛍️ Browse & Search"])
+    B --> C(["🛒 Add to Cart"])
+    C --> D(["🧾 Review Cart"])
+    D --> E(["💳 Checkout"])
+    E --> F(["💰 Payment"])
+    F --> G(["✅ Order Confirmed"])
+
+    classDef stage1 fill:#6C5CE7,stroke:#4834D4,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef stage2 fill:#0984E3,stroke:#065A9E,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef stage3 fill:#00B894,stroke:#00795A,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef stage4 fill:#F39C12,stroke:#B9770E,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef stage5 fill:#E84393,stroke:#B02A6B,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef stage6 fill:#00CEC9,stroke:#00958F,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef stage7 fill:#2ECC71,stroke:#1E8449,stroke-width:2px,color:#ffffff,font-weight:bold;
+
+    class A stage1;
+    class B stage2;
+    class C stage3;
+    class D stage4;
+    class E stage5;
+    class F stage6;
+    class G stage7;
 ```
 
 ---
