@@ -1,615 +1,194 @@
-🚀 Sprint 1 — Architecture & Scope Definition
+<div align="center">
 
-E-Commerce Platform for Consumer Electronics & Tech Accessories
+# 🛍️ E-Commerce Platform
+### Sprint 1 — Architecture & Scope Definition
 
-A modern, scalable, and user-friendly full-stack shopping platform designed for tech-savvy consumers, with a strong focus on performance, simplicity, security, and seamless shopping experience.
+![Sprint](https://img.shields.io/badge/Sprint-1%20%2F%206-6C5CE7?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-2ECC71?style=for-the-badge)
+![Marks](https://img.shields.io/badge/Weight-5%20Marks-F39C12?style=for-the-badge)
+![Course](https://img.shields.io/badge/Course-E--Commerce-0984E3?style=for-the-badge)
 
-⸻
+![React](https://img.shields.io/badge/Frontend-React.js-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Node](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?style=flat-square&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/Auth-JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![Stripe](https://img.shields.io/badge/Payments-Mock%20%2F%20Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
 
-📌 Sprint Overview
+**Author:** Ghulam Kabir Soomro &nbsp;•&nbsp; **Roll No:** 2k23/CSM/40 &nbsp;•&nbsp; **Repository:** `ecommerce-2k23CSM40`
 
-Area	Details
-🎯 Sprint	Sprint 1
-🧩 Focus	Architecture & Scope Definition
-🛍️ Domain	Consumer Electronics & Tech Accessories
-👥 Target Users	Young, tech-savvy retail consumers
-🏗️ Architecture	Full-Stack Web Application
-⚛️ Frontend	React.js
-🟢 Backend	Node.js + Express.js
-🍃 Database	MongoDB Atlas
-💳 Payments	Mock / Stripe
-🔐 Authentication	JWT-based Authentication
+---
 
-⸻
+</div>
 
-1. 🎯 Target Audience & Market Focus
+## 📖 Table of Contents
 
-👤 Primary Persona
+| # | Section |
+|:-:|---|
+| 1 | [Target Audience & Market Focus](#1--target-audience--market-focus) |
+| 2 | [MVP Feature Scope Matrix](#2--minimum-viable-product-mvp-feature-scope) |
+| 3 | [Tech Stack Selection & Justification](#3--tech-stack-selection--justification) |
+| 4 | [Entity-Relationship Diagram (ERD)](#4--entity-relationship-diagram-erd) |
 
-The platform is primarily designed for:
+---
 
-Young, tech-savvy retail consumers and early adopters who prefer fast, convenient, and reliable online shopping for gadgets and accessories.
+## 1. 🎯 Target Audience & Market Focus
 
-✨ User Characteristics
+<table>
+<tr><td width="140"><b>👤 Primary Persona</b></td><td>Young, tech-savvy retail consumers and early adopters who prefer fast, convenient, and reliable online shopping for gadgets and tech accessories. They are comfortable with digital platforms, expect quick product discovery, and value secure, transparent transactions.</td></tr>
+<tr><td><b>💡 Core Pain Point</b></td><td>Existing shopping experiences are often cluttered, slow during product discovery, inconsistent when updating cart data, and complicated at checkout — leading to friction and cart abandonment. Users need a <b>centralized, responsive, and secure</b> platform where discovery, cart management, and checkout feel effortless.</td></tr>
+<tr><td><b>🌐 Domain Scope</b></td><td>Consumer Electronics & Tech Accessories — including laptops, computer peripherals, headphones/earbuds, chargers, mobile accessories, monitors, storage devices, gaming accessories, and power banks.</td></tr>
+</table>
 
-* 📱 Comfortable with modern digital platforms
-* 🛒 Prefer online shopping over traditional retail
-* ⚡ Expect fast product discovery
-* 🔎 Want simple and effective search & filtering
-* 💻 Frequently purchase gadgets and accessories
-* 🔐 Expect secure authentication and checkout
-* 📦 Want transparent cart and order management
+> **Scope Principle:** The domain is intentionally kept narrow enough for a semester-feasible MVP, while the architecture is designed to support additional product categories in future sprints.
 
-⸻
+---
 
-💡 Core Pain Point
+## 2. 🚀 Minimum Viable Product (MVP) Feature Scope
 
-Existing shopping experiences can often become:
+| Category | Feature Name | Description | Priority |
+|---|---|:--|:-:|
+| 🔐 **Authentication** | User Registration & Auth | Secure account registration with password hashing and JWT-based authentication. | 🔴 **High (MVP)** |
+| 🛍️ **Catalog** | Product List & Search | Product browsing interface with taxonomy-based category filtering and keyword search. | 🔴 **High (MVP)** |
+| 🛒 **Cart** | Cart Management | State-persistent cart operations — add, update quantity, remove, and clear items. | 🔴 **High (MVP)** |
+| 💳 **Checkout** | Order Processing | Mock / Stripe payment gateway integration with order object instantiation. | 🔴 **High (MVP)** |
+| 🛠️ **Admin** | Inventory Control | Administrative CRUD operations for managing product inventory. | 🟡 **Medium** |
 
-* ❌ Cluttered and overwhelming
-* ❌ Slow during product discovery
-* ❌ Difficult to navigate
-* ❌ Inconsistent when updating cart information
-* ❌ Complicated during checkout
+### 🔄 Core User Flow
 
-🎯 Our Solution
+```text
+Register/Login → Browse & Search → Add to Cart → Review Cart → Checkout → Payment → Order Confirmed
+```
 
-The platform aims to provide a:
+---
 
-Centralized, responsive, secure, and seamless e-commerce experience where users can discover products quickly, manage their cart in real time, and complete purchases through a simple checkout flow.
+## 3. 🏗️ Tech Stack Selection & Justification
 
-⸻
+### ⚛️ Frontend — React.js
+> **Justification:** React's component-based architecture is highly suited for dynamic, state-heavy interfaces such as shopping carts, live search/filtering, and checkout flows. Its efficient virtual-DOM rendering and large ecosystem (React Router, Context API) enable rapid, maintainable UI development compared to alternatives like Vue.js.
 
-🌐 Domain Scope
+### 🟢 Backend — Node.js + Express.js
+> **Justification:** Node.js's non-blocking, event-driven runtime handles many concurrent API requests efficiently — well suited for catalog browsing and cart operations under load. Express.js adds a lightweight routing and middleware layer for authentication, validation, and error handling, offering faster iteration than heavier frameworks like Spring Boot for an MVP timeline.
 
-🛍️ Consumer Electronics & Tech Accessories
+### 🍃 Database — MongoDB Atlas
+> **Justification:** As a NoSQL document database, MongoDB provides flexible schema design — ideal since products across categories (laptops, cables, power banks) carry different attributes. MongoDB Atlas adds managed cloud hosting and horizontal scalability. **Trade-off:** relational integrity (e.g., foreign-key enforcement) must be handled at the application/service layer rather than the database layer, unlike PostgreSQL/MySQL.
 
-The initial product ecosystem focuses on:
+### ⚡ Caching *(Optional — Future Scope)*
+> Redis is earmarked for a future sprint to cache frequently-accessed product listings and manage session/cart persistence at scale.
 
-* 💻 Laptops & Computer Accessories
-* 🎧 Headphones & Earbuds
-* ⌨️ Keyboards & Mice
-* 🔌 Chargers & Adapters
-* 📱 Mobile Accessories
-* 🖥️ Monitors & Displays
-* 💾 Storage Devices
-* 🎮 Gaming Accessories
-* 🔋 Power Banks
-* 🔗 Cables & Connectivity Products
+### 📊 Stack Summary
 
-Scope Principle: Keep the initial product domain focused enough for rapid MVP development while maintaining an architecture that can support additional product categories in the future.
+| Layer | Choice | Key Alternative Considered |
+|---|---|---|
+| Frontend | React.js | Vue.js |
+| Backend | Node.js + Express.js | Django / Spring Boot |
+| Database | MongoDB Atlas | PostgreSQL |
+| Auth | JWT | Session-based Auth |
+| Payments | Mock / Stripe | PayPal |
 
-⸻
+---
 
-2. 🚀 Minimum Viable Product — MVP
+## 4. 🧩 Entity-Relationship Diagram (ERD)
 
-The MVP focuses on the essential functionality required to deliver a complete online shopping journey.
+### 📐 Relationship Cardinality Summary
 
-🧩 MVP Feature Matrix
+| Relationship | Cardinality | Description |
+|---|:-:|---|
+| Users → Orders | **1 : N** | A user can place many orders |
+| Users → Cart | **1 : 1** | A user owns exactly one active cart |
+| Categories → Products | **1 : N** | A category contains many products |
+| Orders → Order_Items | **1 : N** | An order contains many order line-items |
+| Products → Order_Items | **1 : N** | A product can appear in many order-items |
+| Cart → Cart_Items | **1 : N** | A cart holds many cart-items |
+| Products → Cart_Items | **1 : N** | A product can appear in many cart-items |
 
-Category	Feature	Description	Priority
-🔐 Authentication	User Registration & Authentication	Secure account registration and JWT-based authentication	🔴 High
-🛍️ Catalog	Product Listing & Search	Browse, search, filter, and discover products	🔴 High
-🛒 Cart	Cart Management	Add, update, remove, and persist cart items	🔴 High
-💳 Checkout	Order Processing	Create orders through mock or Stripe payment flow	🔴 High
-🛠️ Admin	Inventory Control	CRUD operations for product inventory	🟡 Medium
+### 🗺️ Diagram
 
-⸻
-
-🔐 Authentication
-
-Core Capabilities
-
-* 👤 User registration
-* 🔑 Secure password hashing
-* 🎟️ JWT-based authentication
-* 🛡️ Protected API routes
-* 🚪 Login / logout flow
-* 👮 Role-based authorization foundation
-
-Security Principle
-
-Passwords are never stored as plain text. Authentication is handled through securely hashed credentials and signed JWT tokens.
-
-⸻
-
-🛍️ Product Catalog
-
-Users should be able to:
-
-* Browse available products
-* 🔎 Search products by name
-* 🗂️ Filter by category
-* 💰 View pricing
-* 📦 Check stock availability
-* 🖼️ View product information
-* ⚡ Quickly discover relevant products
-
-Example Taxonomy
-
-Products
-│
-├── Computers
-│   ├── Laptops
-│   ├── Keyboards
-│   └── Mice
-│
-├── Mobile Accessories
-│   ├── Chargers
-│   ├── Cables
-│   └── Power Banks
-│
-├── Audio
-│   ├── Headphones
-│   └── Earbuds
-│
-└── Gaming
-    ├── Controllers
-    ├── Gaming Mice
-    └── Gaming Keyboards
-
-⸻
-
-3. 🛒 Cart Management
-
-The shopping cart represents the user’s active purchase session.
-
-Core Operations
-
-Operation	Description
-➕ Add	Add a product to the cart
-🔄 Update	Change item quantity
-➖ Remove	Remove an individual item
-🗑️ Clear	Remove all cart items
-💾 Persist	Maintain cart state across sessions
-🧮 Calculate	Automatically calculate cart totals
-
-Cart Lifecycle
-
-Product Discovery
-       ↓
-View Product
-       ↓
-Add to Cart
-       ↓
-Update Quantity
-       ↓
-Review Cart
-       ↓
-Proceed to Checkout
-
-⸻
-
-4. 💳 Checkout & Order Processing
-
-The checkout system converts the user’s cart into a formal order.
-
-Checkout Flow
-
-🛒 Cart
-   │
-   ▼
-📋 Review Order
-   │
-   ▼
-💳 Payment
-   │
-   ├── Mock Payment
-   │
-   └── Stripe Integration
-   │
-   ▼
-📦 Create Order
-   │
-   ▼
-✅ Order Confirmation
-
-Order Responsibilities
-
-* Calculate final order amount
-* Validate product availability
-* Create order object
-* Generate order items
-* Store purchase information
-* Update inventory
-* Track order status
-
-⸻
-
-5. 🛠️ Admin Inventory Control
-
-The administrative module provides controlled access to product inventory.
-
-CRUD Operations
-
-Operation	Purpose
-➕ Create	Add new products
-👁️ Read	View existing products
-✏️ Update	Modify product information
-🗑️ Delete	Remove products
-
-Inventory Data
-
-Administrators can manage:
-
-* Product name
-* Category
-* Price
-* Stock quantity
-* Product description
-* Product image / media
-* Availability status
-
-Priority: Medium for MVP, but the architecture is designed to support expansion into a complete admin dashboard.
-
-⸻
-
-6. 🏗️ Technology Stack
-
-⚛️ Frontend — React.js
-
-Why React.js?
-
-React provides a component-based architecture that is highly suitable for dynamic, state-heavy interfaces such as:
-
-* 🛒 Shopping carts
-* 🔎 Search interfaces
-* 🗂️ Product filtering
-* 💳 Checkout workflows
-* 👤 User dashboards
-* 🛠️ Admin panels
-
-Key Benefits
-
-* ♻️ Reusable components
-* ⚡ Efficient UI rendering
-* 🧩 Modular architecture
-* 📈 Scalable frontend structure
-* 🌐 Large ecosystem
-* 👨‍💻 Strong developer community
-
-⸻
-
-🟢 Backend — Node.js + Express.js
-
-Why Node.js?
-
-Node.js uses a non-blocking, event-driven architecture, making it well suited for applications handling many concurrent API requests.
-
-Why Express.js?
-
-Express provides a lightweight framework for:
-
-* 🛣️ API routing
-* 🔐 Authentication middleware
-* 🧩 Request processing
-* ⚠️ Error handling
-* 🔗 REST API development
-
-Backend Architecture
-
-Client
-  │
-  ▼
-React.js
-  │
-  │ HTTP / REST API
-  ▼
-Express.js
-  │
-  ▼
-Node.js
-  │
-  ├── Authentication
-  ├── Product Services
-  ├── Cart Services
-  ├── Order Services
-  └── Admin Services
-  │
-  ▼
-MongoDB Atlas
-
-⸻
-
-7. 🍃 Database — MongoDB Atlas
-
-Why MongoDB?
-
-MongoDB is a NoSQL document-oriented database that provides flexible schema design and strong scalability.
-
-This is particularly useful for a product catalog where different products may contain different attributes.
-
-Example Product Document
-
-{
-  "name": "Wireless Gaming Mouse",
-  "category": "Gaming",
-  "price": 49.99,
-  "stockQuantity": 120,
-  "specifications": {
-    "dpi": 16000,
-    "connection": "Wireless",
-    "batteryLife": "70 hours"
-  }
-}
-
-Advantages
-
-* 🍃 Flexible document structure
-* 📈 Horizontal scalability
-* ⚡ Fast development
-* 🧩 Suitable for varied product attributes
-* ☁️ Managed cloud infrastructure through MongoDB Atlas
-
-Trade-Off
-
-Because MongoDB is NoSQL, some relational integrity requirements must be handled at the application/service layer rather than relying entirely on traditional relational database constraints.
-
-Decision: The flexibility and development speed of MongoDB make it a strong fit for the MVP while preserving the ability to evolve the data model as the platform grows.
-
-⸻
-
-8. 🧩 High-Level System Architecture
-
-                    ┌──────────────────────┐
-                    │       👤 User        │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │     ⚛️ React.js      │
-                    │      Frontend        │
-                    └──────────┬───────────┘
-                               │
-                         REST / HTTP
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ 🟢 Node.js + Express │
-                    │      Backend API     │
-                    └──────────┬───────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-        🔐 Authentication   🛒 Cart          📦 Orders
-              │                │                │
-              └────────────────┼────────────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   🍃 MongoDB Atlas   │
-                    │       Database       │
-                    └──────────────────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ 💳 Payment Gateway   │
-                    │    Mock / Stripe     │
-                    └──────────────────────┘
-
-⸻
-
-9. 🗃️ Entity Relationship Diagram — ERD
-
-The following ERD represents the core relationships between users, products, categories, carts, and orders.
-
+```mermaid
 erDiagram
     USERS ||--o{ ORDERS : places
-    USERS ||--o| CART : owns
+    USERS ||--|| CART : owns
     CATEGORIES ||--o{ PRODUCTS : contains
     ORDERS ||--|{ ORDER_ITEMS : contains
     PRODUCTS ||--o{ ORDER_ITEMS : included_in
     CART ||--|{ CART_ITEMS : contains
     PRODUCTS ||--o{ CART_ITEMS : added_to
+
     USERS {
-        ObjectId id PK
-        string email UK
-        string password_hash
-        string role
-        datetime created_at
+        INTEGER id PK
+        VARCHAR email UK
+        VARCHAR password_hash
+        VARCHAR role
+        TIMESTAMP created_at
     }
+
     CATEGORIES {
-        ObjectId id PK
-        string name UK
-        string description
-        datetime created_at
+        INTEGER id PK
+        VARCHAR name UK
+        VARCHAR description
     }
+
     PRODUCTS {
-        ObjectId id PK
-        ObjectId category_id FK
-        string name
-        decimal price
-        int stock_quantity
-        string description
-        string image_url
-        datetime created_at
+        INTEGER id PK
+        INTEGER category_id FK
+        VARCHAR name
+        DECIMAL price
+        INTEGER stock_quantity
+        VARCHAR description
+        VARCHAR image_url
+        TIMESTAMP created_at
     }
+
     ORDERS {
-        ObjectId id PK
-        ObjectId user_id FK
-        decimal total_amount
-        string status
-        string payment_status
-        datetime created_at
+        INTEGER id PK
+        INTEGER user_id FK
+        DECIMAL total_amount
+        VARCHAR status
+        VARCHAR payment_status
+        TIMESTAMP created_at
     }
+
     ORDER_ITEMS {
-        ObjectId id PK
-        ObjectId order_id FK
-        ObjectId product_id FK
-        int quantity
-        decimal unit_price
+        INTEGER id PK
+        INTEGER order_id FK
+        INTEGER product_id FK
+        INTEGER quantity
+        DECIMAL unit_price
     }
+
     CART {
-        ObjectId id PK
-        ObjectId user_id FK
-        datetime updated_at
+        INTEGER id PK
+        INTEGER user_id FK
+        TIMESTAMP updated_at
     }
+
     CART_ITEMS {
-        ObjectId id PK
-        ObjectId cart_id FK
-        ObjectId product_id FK
-        int quantity
+        INTEGER id PK
+        INTEGER cart_id FK
+        INTEGER product_id FK
+        INTEGER quantity
     }
+```
 
-💡 MongoDB Note: The diagram uses an ER-style relational representation to communicate application-level relationships. Actual MongoDB implementation may use ObjectId references and/or selective embedding depending on performance and access-pattern requirements.
+### 🔑 Key Constraints
 
-⸻
+| Entity | Primary Key | Foreign Key(s) |
+|---|---|---|
+| Users | `id` | — |
+| Categories | `id` | — |
+| Products | `id` | `category_id → Categories.id` |
+| Orders | `id` | `user_id → Users.id` |
+| Order_Items | `id` | `order_id → Orders.id`, `product_id → Products.id` |
+| Cart | `id` | `user_id → Users.id` |
+| Cart_Items | `id` | `cart_id → Cart.id`, `product_id → Products.id` |
 
-10. 🔄 Core User Journey
+---
 
-                    🌐 Visit Platform
-                           │
-                           ▼
-                    👤 Register / Login
-                           │
-                           ▼
-                    🛍️ Browse Products
-                           │
-                           ▼
-                    🔎 Search / Filter
-                           │
-                           ▼
-                    📦 Select Product
-                           │
-                           ▼
-                      🛒 Add to Cart
-                           │
-                           ▼
-                    🧾 Review Cart
-                           │
-                           ▼
-                      💳 Checkout
-                           │
-                           ▼
-                    💰 Process Payment
-                           │
-                           ▼
-                     📦 Create Order
-                           │
-                           ▼
-                    ✅ Order Confirmed
+<div align="center">
 
-⸻
+### ✅ Sprint 1 Status
 
-11. 🔐 Security Considerations
+**Architecture Defined → MVP Scoped → Tech Stack Justified → ERD Modeled → Ready for Sprint 2**
 
-Security is treated as a core architectural requirement rather than an afterthought.
+*Next Phase: UI/UX Design & API Planning*
 
-🔒 Initial Security Measures
-
-* 🔑 Password hashing
-* 🎟️ JWT authentication
-* 🛡️ Protected API endpoints
-* 👮 Authorization middleware
-* ✅ Input validation
-* 🚫 Unauthorized admin access prevention
-* 🔐 Secure environment variables
-* 🧹 API error handling without sensitive data exposure
-
-Environment Variables
-
-Sensitive configuration should never be committed directly to GitHub.
-
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_secure_secret
-STRIPE_SECRET_KEY=your_stripe_secret
-
-⚠️ Important: Real secrets, API keys, database credentials, and JWT secrets must be stored in environment variables and excluded through .gitignore.
-
-⸻
-
-12. 📁 Proposed Project Structure
-
-ecommerce-platform/
-│
-├── 📁 client/
-│   ├── 📁 src/
-│   │   ├── 📁 components/
-│   │   ├── 📁 pages/
-│   │   ├── 📁 hooks/
-│   │   ├── 📁 services/
-│   │   ├── 📁 context/
-│   │   └── 📁 assets/
-│   └── package.json
-│
-├── 📁 server/
-│   ├── 📁 controllers/
-│   ├── 📁 models/
-│   ├── 📁 routes/
-│   ├── 📁 middleware/
-│   ├── 📁 services/
-│   ├── 📁 utils/
-│   ├── 📁 config/
-│   └── server.js
-│
-├── 📄 .env
-├── 📄 .gitignore
-├── 📄 README.md
-└── 📄 package.json
-
-⸻
-
-13. 📊 MVP Success Criteria
-
-The Sprint 1 architecture will be considered successful when the following foundation is clearly defined:
-
-* [x]	🎯 Target audience identified
-* [x]	💡 Core user problem defined
-* [x]	🌐 Domain scope established
-* [x]	🚀 MVP features prioritized
-* [x]	⚛️ Frontend technology selected
-* [x]	🟢 Backend technology selected
-* [x]	🍃 Database selected
-* [x]	🧩 Core entities identified
-* [x]	🔗 Entity relationships defined
-* [x]	🏗️ High-level architecture established
-* [x]	🔐 Initial security requirements identified
-* [x]	📁 Project structure proposed
-
-⸻
-
-14. 🧭 Sprint 1 Deliverable Summary
-
-Deliverable	Status
-🎯 Target Persona	✅ Defined
-💡 Problem Statement	✅ Defined
-🌐 Domain Scope	✅ Defined
-🚀 MVP Scope	✅ Defined
-⚛️ Frontend Stack	✅ React.js
-🟢 Backend Stack	✅ Node.js + Express.js
-🍃 Database	✅ MongoDB Atlas
-🧩 ERD	✅ Defined
-🏗️ System Architecture	✅ Defined
-🔐 Security Foundation	✅ Defined
-📁 Project Structure	✅ Proposed
-
-⸻
-
-🏁 Final Architecture Decision
-
-React.js + Node.js + Express.js + MongoDB Atlas has been selected as the core technology stack for the MVP.
-
-This architecture provides a strong balance between:
-
-⚡ Development Speed + 🧩 Modularity + 📈 Scalability + 🔐 Security + 🎨 User Experience
-
-The architecture is intentionally designed to keep the MVP focused while providing a solid foundation for future capabilities such as:
-
-* 📦 Advanced inventory management
-* 👤 User profiles
-* ❤️ Wishlist & favorites
-* ⭐ Product reviews & ratings
-* 📊 Analytics dashboard
-* 🚚 Order tracking
-* 🎟️ Coupons & promotions
-* 🤖 AI-powered product recommendations
-* 📱 Progressive Web App / mobile expansion
-
-⸻
-
-🚀 Sprint 1 Status
-
-Architecture Defined → MVP Scoped → Technology Selected → Data Model Designed → Ready for Sprint 2
-
-Next Phase: UI/UX Design & Database/API Planning
+</div>
