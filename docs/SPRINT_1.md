@@ -209,8 +209,20 @@ erDiagram
 
 ### ✅ Sprint 1 Status
 
-**Architecture Defined → MVP Scoped → Tech Stack Justified → ERD Modeled → Ready for Sprint 2**
+<table>
+<tr>
+<td align="center">✅<br><b>Architecture</b><br><sub>Defined</sub></td>
+<td>➜</td>
+<td align="center">✅<br><b>MVP</b><br><sub>Scoped</sub></td>
+<td>➜</td>
+<td align="center">✅<br><b>Tech Stack</b><br><sub>Justified</sub></td>
+<td>➜</td>
+<td align="center">✅<br><b>ERD</b><br><sub>Modeled</sub></td>
+<td>➜</td>
+<td align="center">🚀<br><b>Sprint 2</b><br><sub>Ready</sub></td>
+</tr>
+</table>
 
-*Next Phase: UI/UX Design & API Planning*
+![Next Phase](https://img.shields.io/badge/Next%20Phase-UI%2FUX%20Design%20%26%20API%20Planning-6C5CE7?style=for-the-badge)
 
 </div>
