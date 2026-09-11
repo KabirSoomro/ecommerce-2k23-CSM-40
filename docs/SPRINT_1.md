@@ -14,7 +14,6 @@
 ![Stripe](https://img.shields.io/badge/Payments-Mock%20%2F%20Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
 <br><br>
 **Author:** Ghulam Kabir Soomro &nbsp;•&nbsp; **Roll No:** 2k23/CSM/40 &nbsp;•&nbsp; **Repository:** `ecommerce-2k23CSM40`
-</div>
 
 ## ✅ Table of Contents
 
@@ -193,27 +192,12 @@ INTEGER quantity
 | Cart | `id` | `user_id → Users.id` |
 | Cart_Items | `id` | `cart_id → Cart.id`, `product_id → Products.id` |
 ---
-
 ### ✅ Sprint 1 Status
-✅
-Architecture
-Defined
-➜
-✅
-MVP
-Scoped
-➜
-✅
 
-Tech Stack
-Justified
-➜
-✅
-ERD
-Modeled
-➜
-🚀
-Sprint 2
-Ready
+| Architecture | | MVP | | Tech Stack | | ERD | | Sprint 2 |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| ✅ <br> **Defined** | ➜ | ✅ <br> **Scoped** | ➜ | ✅ <br> **Justified** | ➜ | ✅ <br> **Modeled** | ➜ | 🚀 <br> **Ready** |
 
 ![Next Phase](https://img.shields.io/badge/Next%20Phase-UI%2FUX%20Design%20%26%20API%20Planning-6C5CE7?style=for-the-badge)
+
+</div>
