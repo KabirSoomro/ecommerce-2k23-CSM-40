@@ -1,4 +1,4 @@
-# 🛍️ E-Commerce Platform
+<div align="center">
 
 ## Sprint 1 — Architecture & Scope Definition
 
@@ -7,14 +7,19 @@
 ![Marks](https://img.shields.io/badge/Weight-5%20Marks-F39C12?style=for-the-badge)
 ![Course](https://img.shields.io/badge/Course-E--Commerce-0984E3?style=for-the-badge)
 
+<br>
+
 ![React](https://img.shields.io/badge/Frontend-React.js-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Node](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?style=flat-square&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![JWT](https://img.shields.io/badge/Auth-JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
 ![Stripe](https://img.shields.io/badge/Payments-Mock%20%2F%20Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
 
-Author: Ghulam Kabir Soomro  •  Roll No: 2k23/CSM/40  •  Repository: `ecommerce-2k23CSM40`
----
+<br><br>
+
+**Author:** Ghulam Kabir Soomro &nbsp;•&nbsp; **Roll No:** 2k23/CSM/40 &nbsp;•&nbsp; **Repository:** `ecommerce-2k23CSM40`
+
+</div>
 
 ## ✅ Table of Contents
 
