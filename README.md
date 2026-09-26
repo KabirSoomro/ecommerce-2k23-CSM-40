@@ -7,72 +7,76 @@
 ![Status](https://img.shields.io/badge/Status-In%20Progress-F39C12?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-2ECC71?style=for-the-badge)
 
+<br />
+
 ![React](https://img.shields.io/badge/Frontend-React.js-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Node](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?style=flat-square&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![JWT](https://img.shields.io/badge/Auth-JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-![Stripe](https://img.shields.io/badge/Payments-Mock%20%2F%20Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
+![Stripe](https://img.shields.io/badge/Payments-Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
+
+<br />
 
 **A modern, scalable, and user-friendly full-stack shopping platform for tech-savvy consumers — built end-to-end following the complete SDLC.**
 
 **Author:** Ghulam Kabir Soomro &nbsp;•&nbsp; **Roll No:** 2k23/CSM/40 &nbsp;•&nbsp; **Course:** E-Commerce
 
+<hr />
 </div>
-
----
 
 ## 📖 Table of Contents
 
-| # | Section |
-|:-:|---|
-| 1 | [About the Project](#1--about-the-project) |
-| 2 | [Core Features](#2--core-features) |
-| 3 | [Tech Stack](#3--tech-stack) |
-| 4 | [Project Structure](#4--project-structure) |
-| 5 | [Sprint Roadmap](#5--sprint-roadmap) |
-| 6 | [Getting Started](#6--getting-started) |
-| 7 | [Environment Variables](#7--environment-variables) |
-| 8 | [Documentation](#8--documentation) |
+- [1. About the Project](#1--about-the-project)
+- [2. Core Features](#2--core-features)
+- [3. Tech Stack Architecture](#3--tech-stack-architecture)
+- [4. Project Structure](#4--project-structure)
+- [5. Sprint Roadmap](#5--sprint-roadmap)
+- [6. Getting Started](#6--getting-started)
+- [7. Environment Variables](#7--environment-variables)
+- [8. Documentation](#8--documentation)
 
 ---
 
 ## 1. 📌 About the Project
 
-This repository hosts a **full-stack e-commerce web application** for consumer electronics and tech accessories — laptops, headphones, gaming gear, chargers, and more.
+This repository hosts a **full-stack e-commerce web application** specifically designed for consumer electronics and tech accessories, including laptops, headphones, gaming gear, chargers, and more. 
 
-The project is built as an individual assignment following a complete **Software Development Life Cycle (SDLC)**, delivered across **6 weekly sprints**, from architecture planning through UI/UX design, backend/API development, and final deployment.
+The project is developed as an individual assignment following a rigorous **Software Development Life Cycle (SDLC)**. It will be delivered incrementally across **6 weekly sprints**, evolving from initial architecture planning and UI/UX design to robust backend/API development and final cloud deployment.
 
-> 🎯 **Goal:** A centralized, responsive, and secure shopping experience — fast product discovery, real-time cart management, and a seamless checkout flow.
+> 🎯 **Ultimate Goal:** Deliver a centralized, highly responsive, and secure shopping experience that ensures fast product discovery, seamless real-time cart management, and a frictionless checkout flow.
 
 ---
 
 ## 2. 🚀 Core Features
 
-| Category | Feature | Priority |
-|---|---|:-:|
-| 🔐 Authentication | Secure registration & JWT-based login | 🔴 High |
-| 🛍️ Catalog | Product browsing, search & category filtering | 🔴 High |
-| 🛒 Cart | Add, update, remove, and persist cart items | 🔴 High |
-| 💳 Checkout | Mock / Stripe-powered order processing | 🔴 High |
-| 🛠️ Admin | CRUD inventory management dashboard | 🟡 Medium |
+| Category | Feature Description | Priority |
+|:---|:---|:-:|
+| **🔐 Authentication** | Secure user registration & JWT-based session management. | 🔴 High |
+| **🛍️ Catalog** | Intuitive product browsing, keyword search, and category filtering. | 🔴 High |
+| **🛒 Cart Management** | Real-time add, update, remove actions with state persistence. | 🔴 High |
+| **💳 Checkout** | Seamless order processing using Mock/Stripe payment gateway integrations. | 🔴 High |
+| **🛠️ Admin Dashboard** | Full CRUD inventory management and order monitoring dashboard. | 🟡 Medium |
 
 ---
 
-## 3. 🏗️ Tech Stack
+## 3. 🏗️ Tech Stack Architecture
 
-| Layer | Technology |
-|---|---|
-| ⚛️ Frontend | **React.js** |
-| 🟢 Backend | **Node.js** + **Express.js** |
-| 🍃 Database | **MongoDB Atlas** |
-| 🔐 Authentication | **JWT** (JSON Web Tokens) |
-| 💳 Payments | **Mock Gateway** / **Stripe** |
-| ⚡ Caching *(planned)* | Redis |
+The application is built using the robust **MERN** stack, complemented by modern tools for a seamless developer and user experience.
 
+| Layer | Technology | Purpose |
+|:---|:---|:---|
+| ⚛️ **Frontend** | **React.js** | Building a dynamic, component-based user interface. |
+| 🟢 **Backend** | **Node.js** + **Express.js** | High-performance, event-driven RESTful API server. |
+| 🍃 **Database** | **MongoDB Atlas** | Flexible, scalable NoSQL document database. |
+| 🔐 **Authentication** | **JWT** | Secure, stateless JSON Web Token user authentication. |
+| 💳 **Payments** | **Stripe** | Secure mock and live payment processing. |
+
+### System Flow
 ```text
-Client (React.js) → REST API (Express.js) → Node.js Services → MongoDB Atlas
-                                                     │
-                                              Payment Gateway
+Client (React.js)  ━━━━▶  REST API (Express.js)  ━━━━▶  Node.js Services  ━━━━▶  MongoDB Atlas
+                                                           │
+                                                           ▼
+                                                    Payment Gateway
 ```
 
 ---
@@ -82,95 +86,108 @@ Client (React.js) → REST API (Express.js) → Node.js Services → MongoDB Atl
 ```text
 ecommerce-2k23CSM40/
 │
-├── 📁 client/                 # React.js frontend
+├── 📁 client/                 # React.js frontend application
 │   ├── 📁 src/
-│   │   ├── 📁 components/
-│   │   ├── 📁 pages/
-│   │   ├── 📁 hooks/
-│   │   ├── 📁 services/
-│   │   ├── 📁 context/
-│   │   └── 📁 assets/
+│   │   ├── 📁 components/     # Reusable UI components
+│   │   ├── 📁 pages/          # Application views/pages
+│   │   ├── 📁 hooks/          # Custom React hooks
+│   │   ├── 📁 services/       # API integration functions
+│   │   ├── 📁 context/        # Global state management
+│   │   └── 📁 assets/         # Images, icons, global styles
 │   └── package.json
 │
-├── 📁 server/                 # Node.js + Express backend
-│   ├── 📁 controllers/
-│   ├── 📁 models/
-│   ├── 📁 routes/
-│   ├── 📁 middleware/
-│   ├── 📁 services/
-│   ├── 📁 utils/
-│   ├── 📁 config/
-│   └── server.js
+├── 📁 server/                 # Node.js + Express backend application
+│   ├── 📁 controllers/        # Request handling logic
+│   ├── 📁 models/             # Mongoose database schemas
+│   ├── 📁 routes/             # Express API routing
+│   ├── 📁 middleware/         # Auth, validation, and error handling
+│   ├── 📁 services/           # Business logic layer
+│   ├── 📁 config/             # Environment and DB configurations
+│   └── server.js              # Application entry point
 │
-├── 📁 docs/                   # Sprint documentation
-│   └── SPRINT_1.md
+├── 📁 docs/                   # SDLC documentation and Sprint deliverables
+│   └── SPRINT_1.md            
 │
-├── 📄 .env
+├── 📄 .env                    # Root environment configurations
 ├── 📄 .gitignore
-├── 📄 README.md
-└── 📄 package.json
+└── 📄 README.md
 ```
 
 ---
 
 ## 5. 🗺️ Sprint Roadmap
 
-| Sprint | Focus | Status |
-|:-:|---|:-:|
+We are following an iterative agile approach. Below is the progress tracking for the project:
+
+| Sprint | Focus Area | Status |
+|:-:|:---|:-:|
 | **1** | Architecture & Scope Definition | ✅ **Completed** |
-| **2** | UI/UX Design & API Planning | ⬜ Pending |
+| **2** | UI/UX Design & API Planning | 🔄 **In Progress** |
 | **3** | Backend & Database Implementation | ⬜ Pending |
 | **4** | Frontend Development & Integration | ⬜ Pending |
 | **5** | Testing, Security & Optimization | ⬜ Pending |
 | **6** | Deployment & Final Delivery | ⬜ Pending |
 
+<br/>
+
 ```mermaid
 flowchart LR
-    S1(["✅ Sprint 1<br>Architecture"]) --> S2(["⬜ Sprint 2<br>UI/UX & API"])
+    S1(["✅ Sprint 1<br>Architecture"]) --> S2(["🔄 Sprint 2<br>UI/UX & API"])
     S2 --> S3(["⬜ Sprint 3<br>Backend & DB"])
     S3 --> S4(["⬜ Sprint 4<br>Frontend"])
     S4 --> S5(["⬜ Sprint 5<br>Testing"])
     S5 --> S6(["⬜ Sprint 6<br>Deployment"])
 
     classDef done fill:#2ECC71,stroke:#1E8449,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef inprogress fill:#F39C12,stroke:#B9770E,stroke-width:2px,color:#ffffff,font-weight:bold;
     classDef pending fill:#DFE6E9,stroke:#B2BEC3,stroke-width:2px,color:#2D3436,font-weight:bold;
 
     class S1 done;
-    class S2,S3,S4,S5,S6 pending;
+    class S2 inprogress;
+    class S3,S4,S5,S6 pending;
 ```
 
 ---
 
 ## 6. ⚙️ Getting Started
 
+Follow these steps to set up the project locally.
+
 ### Prerequisites
-- Node.js (v18+)
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18 or higher)
 - npm or yarn
-- MongoDB Atlas account (or local MongoDB instance)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account (or a local MongoDB instance)
 
 ### Installation
 
+**1. Clone the repository:**
 ```bash
-# Clone the repository
-git clone https://github.com/<your-username>/ecommerce-2k23CSM40.git
+git clone https://github.com/your-username/ecommerce-2k23CSM40.git
 cd ecommerce-2k23CSM40
+```
 
-# Install backend dependencies
+**2. Install Backend Dependencies:**
+```bash
 cd server
 npm install
+```
 
-# Install frontend dependencies
+**3. Install Frontend Dependencies:**
+```bash
 cd ../client
 npm install
 ```
 
-### Run the App
+### Run the Application
+
+You will need two terminal windows to run both the server and client simultaneously.
 
 ```bash
-# Start backend (from /server)
+# Terminal 1: Start backend server (from /server)
 npm run dev
 
-# Start frontend (from /client)
+# Terminal 2: Start frontend client (from /client)
 npm start
 ```
 
@@ -178,28 +195,41 @@ npm start
 
 ## 7. 🔐 Environment Variables
 
-Create a `.env` file inside `/server` with the following keys:
+To run this project, you will need to add the following environment variables. Create a `.env` file inside the `/server` directory:
 
 ```env
+# Database
 MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_secure_secret
+
+# Authentication
+JWT_SECRET=your_secure_jwt_secret
+JWT_EXPIRE=30d
+
+# Payments (Stripe)
 STRIPE_SECRET_KEY=your_stripe_secret
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+
+# Server
+PORT=5000
+NODE_ENV=development
 ```
 
-> ⚠️ Never commit real secrets to GitHub — `.env` is excluded via `.gitignore`.
+> ⚠️ **Security Note:** Never commit your real `.env` files to GitHub. Make sure it is included in your `.gitignore`.
 
 ---
 
 ## 8. 📚 Documentation
 
-| Document | Description |
-|---|---|
-| [`docs/SPRINT_1.md`](./docs/SPRINT_1.md) | Architecture, MVP scope, tech stack justification & ERD |
+Detailed documentation for each phase of the Software Development Life Cycle (SDLC) can be found in the `docs` folder.
 
----
+| Document | Description |
+|:---|:---|
+| 📑 [`SPRINT_1.md`](./docs/SPRINT_1.md) | Initial Architecture, MVP scope, tech stack justification, and Entity-Relationship Diagram (ERD). |
+
+<br />
+<br />
 
 <div align="center">
-
-**Made with ⚡ as part of the E-Commerce course SDLC project**
-
+  <b>Built with passion ⚡ for the E-Commerce SDLC Project</b><br>
+  <i>Ghulam Kabir Soomro &copy; 2024</i>
 </div>
